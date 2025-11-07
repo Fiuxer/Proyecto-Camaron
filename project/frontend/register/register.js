@@ -3,7 +3,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
 
   const formData = new FormData(e.target);
 
-  const res = await fetch("../../backend/register.php", {
+  const res = await fetch("project/backend/register.php", {
     method: "POST",
     body: formData
   });
