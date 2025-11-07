@@ -5,7 +5,7 @@ document.getElementById("login-form").onsubmit = async (e) => {
   const password = document.getElementById("password").value;
 
   // Enviar datos al backend
-  const res = await fetch("../backend/login.php", {
+  const res = await fetch("../../backend/login.php", {
     method: "POST",
     headers: { "Content-Type": "application.json" },
     body: JSON.stringify({ username, password })

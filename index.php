@@ -6,10 +6,10 @@ $uri = str_replace('/Proyecto-Camaron/', '', $uri);
 switch ($uri) {
   case '':
   case 'login':
-    include 'project/frontend/login.html';
+    include 'project/frontend/login/login.html';
     break;
   case 'register':
-    include 'project/frontend/register.html';
+    include 'project/frontend/register/register.html';
     break;
   default:
     echo '404 🥀';
