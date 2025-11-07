@@ -6,12 +6,11 @@
   <title>Proyecto Camarón</title>
   
   <!-- Hoja de estilo que cambiará -->
-  <link id="theme-style" rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project/style.css">
   
   <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css?family=Rubik+Bubbles" rel="stylesheet">
 </head>
-
 <body>
   <h2>Log In</h2>
 
@@ -23,23 +22,12 @@
 
   <p id="result"></p>
 
-  <!-- Botón para cambiar el tema -->
-  <button onclick="changeTheme()" id="theme-btn">Cambiar tema</button>
-
   <footer>
     <p>¿No tienes cuenta?</p>
-    <a href="./register.html">
+    <a href="./register">
       <button>Registrate</button>
     </a>
   </footer>
-
-  <script>
-    function changeTheme() {
-      const link = document.getElementById("theme-style");
-      const current = link.getAttribute("href");
-      link.setAttribute("href", current === "style.css" ? "style-dark.css" : "style.css");
-    }
-  </script>
 
   <script src="login.js"></script>
 </body>
