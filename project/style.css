@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
 
 * {
+  --font: "Rubik Bubbles";
   font-family: Rubik Bubbles;
 }
 
@@ -115,8 +116,8 @@ footer {
   position: absolute;
   bottom: 25px;
   width: 90%;
-  background-color: #3c6d91;
-  border-radius: 10px;
+  background-color: #8fd4f5;
+  border-radius: 3px;
   padding: 12px 20px;
   display: flex;
   align-items: center;
@@ -146,3 +147,60 @@ a {
   text-decoration: none;
 }
 
+/* ===== ALL TS IS FOR THE MAIN PAGE ===== */
+
+aside {
+  position: fixed;
+  right: 15px;
+  top: 90px;
+  translate: 0, -50%;
+  width: 25%;
+  height: calc(100% - 180px);
+  border-radius: 4px;
+  display: flex;
+  background-color: #8fd4f5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5 1fr);
+  align-items: center;
+  align-content: center;
+}
+
+header {
+  background-color: #8fd4f5;
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  width: calc(100vw - 30px);
+  height: 60px;
+  translate: -50%;
+  border-radius: 3px;
+
+  .account-name-div {
+    aspect-ratio: 7/1;
+    position: inherit;
+    left: 20px;
+    top: 5px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    vertical-align: middle;
+    align-items: center;
+    gap: 10px;
+    
+    img {
+      position: static;
+      aspect-ratio: 1/1;
+      width: 45px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: solid black 1px;
+    }
+    
+    p {
+      color: #2c5a7a;
+      font: normal normal bold 1.5rem var(--font);
+    }
+  }
+}
