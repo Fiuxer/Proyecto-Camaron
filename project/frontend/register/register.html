@@ -7,23 +7,29 @@
   <title>Register</title>
 </head>
 <body>
-  <h2>Registrarse</h2>
+  <header>
+    <h2>Registrarse</h2>
+  </header>
 
-  <form id="register-form">
-    <input type="text" name="name" id="name" placeholder="Nombre">
-    <input type="text" name="user" id="user" placeholder="Usuario" required>
-    <input type="password" name="password" id="password" placeholder="Contraseña" required>
-    <input type="password" name="confirm" id="confirm" placeholder="Confirmar contraseña" required>
-    <input type="file" name="pfp" id="pfp" accept="image/*">
-    <button type="submit">Crear cuenta</button>
-  </form>
+  <main class="register-main">
+    <form id="register-form">
+      <input type="text" name="name" id="name" placeholder="Nombre">
+      <input type="text" name="user" id="user" placeholder="Usuario" required>
+      <input type="password" name="password" id="password" placeholder="Contraseña" required>
+      <input type="password" name="confirm" id="confirm" placeholder="Confirmar contraseña" required>
+      <input type="file" name="pfp" id="pfp" accept="image/*">
+      <button type="submit">Crear cuenta</button>
+    </form>
+    <p id="result"></p>
+  </main>
 
-  <button onclick="returnToLogin()">
-    <p>Regresar</p>
-  </button>
-
-  <p id="result"></p>
-
-  <script src="project/frontend/register/register.js"></script>
+  <footer>
+    <button onclick="returnToLogin()">
+      <p>Regresar</p>
+    </button>
+  
+  
+    <script src="project/frontend/register/register.js"></script>
+  </footer>
 </body>
 </html>
