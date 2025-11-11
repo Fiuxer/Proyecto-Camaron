@@ -13,3 +13,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
   
   document.getElementById("result").textContent = data.message;
 });
+
+function returnToLogin() {
+  window.location.href = "http://localhost/Proyecto-Camaron/";
+}

@@ -26,7 +26,9 @@ $row = $result->fetch_assoc();
 
 // Comprobar usuario y contraseña (Contraseña hashed)
 if (password_verify($password, $row["password"])) {
-  echo json_encode(["message"=> "Login exitoso", "user"=> $row["user"]]);
+  $_GLOBAL["Username"] = $row["user"];
+  echo json_encode(["redirect"=> "/Proyecto-Camaron/main"]);
+  exit();
 } else {
   echo json_encode(["message"=> "Credenciales incorrectas"]);
 }
