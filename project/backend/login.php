@@ -26,7 +26,9 @@ $row = $result->fetch_assoc();
 
 // Comprobar usuario y contraseña (Contraseña hashed)
 if (password_verify($password, $row["password"])) {
-  $_GLOBAL["Username"] = $row["user"];
+  session_start();
+  $_SESSION["pfpPath"] = $row["pfp_path"];
+  $_SESSION["user"] = $row["user"];
   echo json_encode(["redirect"=> "/Proyecto-Camaron/main"]);
   exit();
 } else {

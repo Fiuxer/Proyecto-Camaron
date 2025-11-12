@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username = $_POST['user'];
   $password = $_POST['password'];
   $confirm = $_POST['confirm'];
+  $email = $_POST['email'];
 
   if ($password != $confirm) {
     echo json_encode(["message"=> "Las contraseñas no coinciden"]);
@@ -22,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   move_uploaded_file($_FILES["pfp"]["tmp_name"], $targetFilePath);
 
   // Insertar a db
-  $stmt = $conn->prepare("INSERT INTO users(name, user, password, pfp_path) VALUES(?, ?, ?, ?)");
-  $stmt->bind_param("ssss", $name, $username, $hash, $targetFilePath);
+  $stmt = $conn->prepare("INSERT INTO users(name, user, email, password, pfp_path) VALUES(?, ?, ?, ?, ?)");
+  $stmt->bind_param("sssss", $name, $username, $email, $hash, $targetFilePath);
 
   if ($stmt->execute()) {
     echo json_encode(["message"=> "Usuario registrado exitosamente"]);
