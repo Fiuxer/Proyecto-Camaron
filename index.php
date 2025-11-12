@@ -5,6 +5,8 @@ $uri = str_replace('/Proyecto-Camaron/', '', $uri);
 
 switch ($uri) {
   case '':
+    include 'project/frontend/homepage/home.html';
+    break;
   case 'login':
     include 'project/frontend/login/login.html';
     break;
@@ -24,5 +26,3 @@ switch ($uri) {
     echo '404 🥀';
     break;
 }
-
-?>
