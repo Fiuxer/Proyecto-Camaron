@@ -43,26 +43,26 @@ body {
   grid-column: 2;
   grid-row: 2;
   justify-self: center;
+}
 
-  /* ======= CAMPOS ======= */
-  input[type="text"],
-  input[type="password"] {
-    background-color: #3b6c8d;
-    border: 1px solid #8fd4f5;
-    border-radius: 6px;
-    padding: 8px;
-    width: 100%;
-    outline: none;
-    color: #e4f8ff;
-    font-weight: bold;
-    font-size: 0.8rem;
-    transition: all 0.2s ease;
-  }
-  
-  input[type="text"]:focus,
-  input[type="password"]:focus {
-    box-shadow: 0 0 6px #8fd4f5;
-  }
+/* ======= CAMPOS (login) ======= */
+#login-form input[type="text"],
+#login-form input[type="password"] {
+  background-color: #3b6c8d;
+  border: 1px solid #8fd4f5;
+  border-radius: 6px;
+  padding: 8px;
+  width: 100%;
+  outline: none;
+  color: #e4f8ff;
+  font-weight: bold;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+#login-form input[type="text"]:focus,
+#login-form input[type="password"]:focus {
+  box-shadow: 0 0 6px #8fd4f5;
 }
 
 /* Imagen de avatar */
@@ -77,13 +77,11 @@ body {
   margin-bottom: 15px;
 }
 
-
 /* ======= BOTÓN LOGIN ======= */
-button[type="submit"] {
-  position: fixed;
-  bottom: 37px;
-  right: 5%;
-  z-index: 1;
+#login-form button[type="submit"] {
+ 
+  position: relative;
+  margin-top: 10px;
   background-color: #6bbfea;
   color: white;
   border: none;
@@ -95,7 +93,7 @@ button[type="submit"] {
   transition: all 0.2s ease;
 }
 
-button[type="submit"]:hover {
+#login-form button[type="submit"]:hover {
   background-color: #8fd4f5;
   box-shadow: 0 0 10px rgba(143, 212, 245, 0.5);
 }
@@ -134,45 +132,99 @@ footer button {
   margin-left: 4%;
 }
 
-footer button:hover {
-  background-color: #8fd4f5;
-  box-shadow: 0 0 10px rgba(143, 212, 245, 0.5);
+/* ===== PARA EL REGISTER ===== */
+/* Register form */
+.register-main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
 }
-
-a {
-  text-decoration: none;
-}
-
-/* ===== GENERAL STUFF ===== */
-
-button {
-  background-color: #77c4f2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 25px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow:0 0 10px #102537;
-}
-
-button:hover {
-  background-color: #8fd4f5;
-  box-shadow: 0 0 10px rgba(143, 212, 245, 0.5);
-}
-
-/* ===== PARA THE REGISTER COSA ESA THAT ===== */
-
-.register-form {
-  width: 60%;
+#register-form {
+  background-color: #2c5a7a;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  position: relative;
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+}
 
-  input {
-    width: 100%;
-  }
+/* botones de register */
+#register-form input[type="text"],
+#register-form input[type="password"],
+#register-form input[type="email"],
+#register-form input[type="file"] {
+  background-color: #3b6c8d;
+  border: 1px solid #8fd4f5;
+  border-radius: 6px;
+  padding: 8px 10px;
+  width: 100%;
+  outline: none;
+  color: #e4f8ff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+#register-form input[type="file"] {
+  padding: 6px 10px;
+  color: #e4f8ff;
+  font-weight: normal;
+}
+
+#register-form input:focus {
+  box-shadow: 0 0 8px rgba(143,212,245,0.25);
+  border-color: #77c4f2;
+}
+
+/* Crear cuenta */
+#register-form button[type="submit"] {
+  align-self: flex-end;
+  background-color: #6bbfea;
+  color: white;
+  border-radius: 10px;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  border: none;
+  position: relative; 
+}
+
+#register-form button[type="submit"]:hover {
+  background-color: #8fd4f5;
+}
+
+/* la pfp */
+#register-form input[type="file"]::file-selector-button {
+  align-self: flex-end;
+  background-color: #6bbfea;
+  color: white;
+  border-radius: 10px;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  border: none;
+  transition: all 0.15s ease;
+}
+
+#register-form input[type="file"]::file-selector-button:hover {
+  background-color: #8fd4f5;
+  transition: all 0.15s ease;
 }
 
 /* ===== ALL TS IS FOR THE MAIN PAGE ===== */
@@ -190,16 +242,16 @@ aside {
   grid-column: 3;
   grid-row: 2;
   justify-content: space-evenly;
+}
 
-  img {
-    aspect-ratio: 1/1;
-    width: 40%;
-    border-radius: 50%;
-  }
+aside img {
+  aspect-ratio: 1/1;
+  width: 40%;
+  border-radius: 50%;
+}
 
-  p {
-    text-transform: capitalize;
-  }
+aside p {
+  text-transform: capitalize;
 }
 
 header {
@@ -214,34 +266,34 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
 
-  .account-name-div {
-    aspect-ratio: 7/1;
-    position: inherit;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    vertical-align: middle;
-    align-items: center;
-    gap: 10px;
-    
-    img {
-      position: static;
-      aspect-ratio: 1/1;
-      width: 45px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: solid black 1px;
-    }
-    
-    p {
-      text-transform: capitalize;
-      color: #e9f9ff;
-      letter-spacing: 1.7px;
-      font: normal normal bold 2.3rem var(--font);
-    }
-  }
+header .account-name-div {
+  aspect-ratio: 7/1;
+  position: inherit;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  vertical-align: middle;
+  align-items: center;
+  gap: 10px;
+}
+
+header .account-name-div img {
+  position: static;
+  aspect-ratio: 1/1;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid #E9F9FF 3px;
+}
+
+header .account-name-div p {
+  text-transform: capitalize;
+  color: #e9f9ff;
+  letter-spacing: 1.7px;
+  font: normal normal bold 2.3rem var(--font);
 }
 
 main {
@@ -251,56 +303,29 @@ main {
   grid-column: span 2;
   grid-row: 2;
   z-index: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: none;
-
-  div {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    gap: 5px;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    justify-items: center;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-    width: 80%;
-    height: 300px;
-    background-color: #3b6c8d;
-    border-radius: 5px;
-    margin: 2%;
-    padding: 15px;
-  }
 }
 
-.register-main {
-  background-color: #2c5a7a;
+main div {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+}
+
+main a {
+  text-decoration: none;
+  color: white;
+  width: 80%;
+  height: 300px;
+  background-color: #3b6c8d;
   border-radius: 5px;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 2%;
   padding: 15px;
-  gap: 15px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
-  grid-column: 2;
-  grid-row: 2;
-  justify-self: center;
-}
-
-main::before {
-  content: '';
-  position: absolute;
-  border-style:  solid;
-  border-color: #799eb64e;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-  filter: blur(5px);
-  z-index: -1;
 }
 
 /* ===== ES CHISTE PROFE ===== */
