@@ -14,6 +14,9 @@ switch ($uri) {
   case 'main':
     include 'project/frontend/main/main.html';
     break;
+  case 'lecture':
+    include 'project/frontend/lecture/lecture.html';
+    break;
   default:
     echo '404 🥀';
     break;

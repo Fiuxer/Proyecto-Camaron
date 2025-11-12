@@ -11,6 +11,7 @@ window.onload = async (e) => {
   });
 
   const data = await res.json();
+
   if (data.path) {
     console.log(data.path);
     img = document.querySelector(".pfp-holder");
@@ -26,12 +27,35 @@ window.onload = async (e) => {
   // setTimeout(() => {
   //   document.querySelector(".ad-div").style.display = "grid";
   // }, 2000);
-
-  const container = document.getElementById("container");
   
-  for (let i = 1; i <= 15; i++ ) {
-    const article = document.createElement("article");
-    article.textContent = `Lección ${i}`;
-    container.appendChild(article);
+  //LOAD LECTURES
+  const container = document.getElementById("container");
+
+  const lecturesRes = await fetch("project/backend/getlectures.php", {
+    method: "GET",
+    credentials: "include"
+  });
+
+  const lecturesData = await lecturesRes.json();
+
+  
+  // console.log(lecturesData);
+
+  if (!lecturesData || !Array.isArray(lecturesData)) {
+    console.error("No data");
+    return;
   }
+
+  lecturesData.forEach(lecture => {
+    const a = document.createElement("a");
+    a.href = `/Proyecto-Camaron/lecture?id=${lecture.id}`;
+    a.classList.add("lecture-link");
+
+    const article = document.createElement("article");
+    article.textContent = lecture.name;
+
+    a.appendChild(article);
+    container.appendChild(a);
+  })
+  .catch(err => console.error("fetch didn't work", err));
 };
