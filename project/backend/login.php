@@ -29,6 +29,7 @@ if (password_verify($password, $row["password"])) {
   session_start();
   $_SESSION["pfpPath"] = $row["pfp_path"];
   $_SESSION["user"] = $row["user"];
+  $_SESSION["name"] = $row["name"];
   echo json_encode(["redirect"=> "/Proyecto-Camaron/main"]);
   exit();
 } else {

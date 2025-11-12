@@ -183,13 +183,23 @@ aside {
   height: 100%;
   border-radius: 4px;
   background-color: #2c5a7a;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
+  display: flex;
+  flex-direction: column;
   align-items: center;
   align-content: center;
   grid-column: 3;
   grid-row: 2;
+  justify-content: space-evenly;
+
+  img {
+    aspect-ratio: 1/1;
+    width: 40%;
+    border-radius: 50%;
+  }
+
+  p {
+    text-transform: capitalize;
+  }
 }
 
 header {
@@ -242,6 +252,7 @@ main {
   grid-row: 2;
   z-index: 1;
   overflow-y: scroll;
+  scrollbar-width: none;
 
   div {
     width: 100%;

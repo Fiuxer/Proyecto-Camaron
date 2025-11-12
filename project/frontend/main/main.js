@@ -12,17 +12,21 @@ window.onload = async (e) => {
 
   const data = await res.json();
 
-  if (data.path) {
-    console.log(data.path);
-    img = document.querySelector(".pfp-holder");
-    img.src = data.path;
-    console.log(img.src);
+  if (!data) {
+    console.error("Got an error gang");
+    return;
   }
-  if (data.user) {
-    console.log(data.user);
-    const name = document.getElementById("username");
-    name.innerHTML = data.user;
-  }
+  console.log(data.path);
+  img = document.querySelector(".pfp-holder");
+  asideimg = document.querySelector(".aside-pfp");
+  img.src = data.path;
+  asideimg.src = data.path;
+  console.log(data.user);
+  const name = document.getElementById("username");
+  name.innerHTML = data.user;
+  console.log(data.name);
+  document.querySelector("#name").textContent = data.name;
+  document.querySelector("#aside-username").textContent = data.user;
 
   // setTimeout(() => {
   //   document.querySelector(".ad-div").style.display = "grid";
@@ -57,5 +61,4 @@ window.onload = async (e) => {
     a.appendChild(article);
     container.appendChild(a);
   })
-  .catch(err => console.error("fetch didn't work", err));
 };
