@@ -1,11 +1,12 @@
 window.onload = () => {
   const t2 = SplitText('.text2');
-  const color1 = '#fff';
-  const color2 = '#17c0fd';
+  const color1 = '#5995fbff';
+  const color2 = '#ffffffff';
 
   const movebar = () => {
     const width = gsap.getProperty('.text1', 'width');
-    gsap.set('.title-bar', { left: width/2 + 360 }); // offset
+    const part = window.innerWidth/3.7;
+    gsap.set('.title-bar', { left: width/2 + part }); // offset
   };
 
   const tl = gsap.timeline({ delay: 0.2 });
@@ -34,7 +35,7 @@ window.onload = () => {
 
     .to('.title-bar', {
       duration: 1.0,
-      width: 290,
+      width: 700,
       ease: "power4.inOut"
     }, '+=0.1')
 
@@ -52,7 +53,7 @@ window.onload = () => {
 
     .to('.title-bar', {
       duration: 0.4,
-      x: 290,
+      x: 700,
       width: 0,
       ease: "power4.in"
     })
