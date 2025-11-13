@@ -1,6 +1,6 @@
 
 function returnToLogin() {
-  window.location.href = "/Proyecto-Camaron/";
+  window.location.href = "/Proyecto-Camaron/login";
 }
 
 window.onload = async (e) => {
