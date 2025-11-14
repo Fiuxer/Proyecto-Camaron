@@ -140,3 +140,50 @@ html, body {
 #quesomos {
   scroll-margin-top: 100px;
 }
+
+
+// ANIMATIONS
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(0, 25%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeIn2 {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 250%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes unblur {
+  from {
+    filter: blur(50px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
