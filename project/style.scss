@@ -118,6 +118,7 @@ footer {
   display: flex;
   align-items: center;
   box-shadow: 0px 0px 3px #00000067;
+  backdrop-filter: blur(0.5rem);
 
   button {
     background-color: transparent;
@@ -275,6 +276,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   box-shadow: 0 0 6px #00000067;
+  backdrop-filter: blur(0.5rem);
 
   .account-name-div {
     aspect-ratio: 7/1;
@@ -376,13 +378,48 @@ main {
 .lecture-text {
   font-family: Arial, Helvetica, sans-serif;
   padding: 15px;
+
+  * {
+    font-family: inherit;
+  }
+  
+  h1:first-of-type {
+    font-family: Rubik Bubbles;
+    letter-spacing: .3rem;
+  }
 }
 
-.lecture-text * {
-  font-family: inherit;
+/* Backgroud Images and circles and sutff */
+.background-circles {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
 }
 
-.lecture-text h1:first-of-type {
-  font-family: Rubik Bubbles;
-  letter-spacing: .3rem;
+.circle1, .circle2, .circle3, .circle {
+  position: fixed;
+  aspect-ratio: 1/1;
+  background-color: #77c4f267;
+  border-radius: 50%;
+  z-index: inherit;
+  backdrop-filter: invert(0.8);
+}
+
+.circle1 {
+  width: 600px;
+  translate: -50% -50%;
+}
+
+.circle2 {
+  bottom: 0px;
+  right: 0px;
+  width: 500px;
+  translate: 0 50%;
+}
+
+.circle3 {
+  width: 400px;
+  bottom: 0px;
+  left: 200px;
 }
