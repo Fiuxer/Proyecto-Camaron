@@ -30,9 +30,7 @@ window.onload = () => {
     circle.style.left = rand + "px";
     circle.style.width = size + "px";
     circle.style.bottom = -size + "px";
-
     circle.classList.add("circle");
-
     background.appendChild(circle);
   }, Math.floor(Math.random() * 500) + 500);
 
@@ -46,6 +44,5 @@ window.onload = () => {
         circ.remove();
       }
     });
-
   },8);
 }
