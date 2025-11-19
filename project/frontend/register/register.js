@@ -15,5 +15,5 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
 });
 
 function returnToLogin() {
-  window.location.href = "http://localhost/Proyecto-Camaron/";
+  window.location.href = "http://localhost/Proyecto-Camaron/login";
 }

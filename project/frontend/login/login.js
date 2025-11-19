@@ -25,9 +25,7 @@ window.onload = () => {
 
   setInterval(() => {
     let rand = Math.floor(Math.random() * window.innerWidth);
-    console.log(rand);
-    let size = Math.floor(Math.random() * 14) * 50;
-    console.log("Size: " + size);
+    let size = Math.floor(Math.random() * 4) * 50;
     let circle = document.createElement("i");
     circle.style.left = rand + "px";
     circle.style.width = size + "px";
@@ -36,13 +34,18 @@ window.onload = () => {
     circle.classList.add("circle");
 
     background.appendChild(circle);
-  }, Math.floor(Math.random() * 5000));
+  }, Math.floor(Math.random() * 500) + 500);
 
   setInterval(()=> {
     let circles = document.querySelectorAll(".circle");
     circles.forEach(circ => {
       let posY = parseInt(circ.style.bottom) || 0;
       circ.style.bottom = (posY + 1) + "px";
+
+      if (posY > 1000) {
+        circ.remove();
+      }
     });
-  },2);
+
+  },8);
 }

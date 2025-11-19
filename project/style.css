@@ -159,13 +159,11 @@ footer button:hover {
   grid-row: 2;
   justify-self: center;
   align-self: center;
+  /* botones de register */
+  /* Crear cuenta */
+  /* la pfp */
 }
-
-/* botones de register */
-#register-form input[type=text],
-#register-form input[type=password],
-#register-form input[type=email],
-#register-form input[type=file] {
+#register-form input {
   background-color: #3b6c8d;
   border: 1px solid #8fd4f5;
   border-radius: 6px;
@@ -178,19 +176,15 @@ footer button:hover {
   transition: all 0.15s ease;
   box-sizing: border-box;
 }
-
 #register-form input[type=file] {
   padding: 6px 10px;
   color: #e4f8ff;
   font-weight: normal;
 }
-
 #register-form input:focus {
   box-shadow: 0 0 8px rgba(143, 212, 245, 0.25);
   border-color: #77c4f2;
 }
-
-/* Crear cuenta */
 #register-form button[type=submit] {
   align-self: flex-end;
   background-color: #6bbfea;
@@ -204,12 +198,9 @@ footer button:hover {
   border: none;
   position: relative;
 }
-
-#register-form button[type=submit]:hover {
+#register-form button[type=submit] button[type=submit]:hover {
   background-color: #8fd4f5;
 }
-
-/* la pfp */
 #register-form input[type=file]::file-selector-button {
   align-self: flex-end;
   background-color: #6bbfea;
@@ -223,7 +214,6 @@ footer button:hover {
   border: none;
   transition: all 0.15s ease;
 }
-
 #register-form input[type=file]::file-selector-button:hover {
   background-color: #8fd4f5;
   transition: all 0.15s ease;
@@ -378,17 +368,16 @@ main a:hover {
   position: fixed;
   padding: 0;
   margin: 0;
-  z-index: 1000;
+  z-index: -1000;
 }
 
 .circle1, .circle2, .circle3, .circle {
   position: fixed;
   aspect-ratio: 1/1;
-  background-color: rgba(119, 196, 242, 0.4039215686);
   border-radius: 50%;
   z-index: inherit;
-  -webkit-backdrop-filter: invert(0.8);
-          backdrop-filter: invert(0.8);
+  border: #77c4f2 1px solid;
+  filter: blur(0.2rem);
 }
 
 .circle1 {
@@ -407,4 +396,6 @@ main a:hover {
   width: 400px;
   bottom: 0px;
   left: 200px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* pwypfbn4 *//*# sourceMappingURL=style.css.map */
