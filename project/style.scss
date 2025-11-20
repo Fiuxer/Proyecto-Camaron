@@ -426,4 +426,12 @@ main {
   // backdrop-filter: invert(0.8);
 }
 
-/* pwypfbn4 */
+// Search quedy
+#search {
+  width: 40%;
+  height: 40px;
+  border-radius: 20px 10px 20px 10px;
+  border: var(--color1) 3px solid;
+  padding-left: 20px;
+  color: var(--color1);
+}
