@@ -58,18 +58,19 @@ window.onload = async (e) => {
   const container = document.getElementById("container");
 
   const lecturesRes = await fetch("project/backend/getlectures.php", {
-    method: "GET",
-    credentials: "include"
+    method: "POST",
+    credentials: "include",
+    body: "",
   });
 
   const lecturesData = await lecturesRes.json();
-
-  
 
   if (!lecturesData || !Array.isArray(lecturesData)) {
     console.error("No data");
     return;
   }
+
+  container.innerHTML = '';
 
   lecturesData.forEach(lecture => {
     const a = document.createElement("a");
@@ -81,5 +82,39 @@ window.onload = async (e) => {
 
     a.appendChild(article);
     container.appendChild(a);
-  })
+  });
+  
 };
+
+const searchInput = document.getElementById("search");
+
+searchInput.addEventListener('input', async (event) => {
+  const container = document.getElementById("container");
+
+  const lecturesRes = await fetch("project/backend/getlectures.php", {
+    method: "POST",
+    credentials: "include",
+    body: event.target.value,
+  });
+
+  const lecturesData = await lecturesRes.json();
+
+  if (!lecturesData || !Array.isArray(lecturesData)) {
+    console.error("No data");
+    return;
+  }
+
+  container.innerHTML = '';
+
+  lecturesData.forEach(lecture => {
+    const a = document.createElement("a");
+    a.href = `/Proyecto-Camaron/lecture?id=${lecture.id}`;
+    a.classList.add("lecture-link");
+
+    const article = document.createElement("article");
+    article.textContent = lecture.name;
+
+    a.appendChild(article);
+    container.appendChild(a);
+  });
+});
