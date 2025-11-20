@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="project/style.css">
+  <title>Register</title>
+</head>
+<body>
+  <header>
+    <h2>Configuraci&oacute;n de perfil</h2>
+  </header>
+
+  <main class="register-main">
+    <form id="register-form">
+      <input type="text" name="name" id="name" placeholder="Nombre">
+      <input type="text" name="user" id="user" placeholder="Usuario" required>
+      <input type="password" name="password" id="password" placeholder="Contraseña" required>
+      <input type="password" name="confirm" id="confirm" placeholder="Confirmar contraseña" required>
+      <input type="text" name="email" id="email" placeholder="email@example" required>
+      <input type="file" name="pfp" id="pfp" accept="image/*">
+      <button type="submit">Crear cuenta</button>
+    </form>
+    <p id="result"></p>
+  </main>
+
+  <footer>
+    <a href="/Proyecto-Camaron/login">
+      <button>
+        <p>Regresar</p>
+      </button>
+    </a>
+  </footer>
+  
+  <div class="background-circles">
+  </div>      
+  
+  
+    <script src="project/frontend/config/config.js"></script>
+</body>
+</html>

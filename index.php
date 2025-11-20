@@ -20,7 +20,7 @@ switch ($uri) {
     include 'project/frontend/lecture/lecture.html';
     break;
   case 'config':
-    include 'project/frontend/config/config.heml';
+    include 'project/frontend/config/config.html';
     break;
   default:
     echo '404 🥀';

@@ -1,6 +1,28 @@
-
-function returnToLogin() {
-  window.location.href = "/Proyecto-Camaron/login";
+async function returnToLogin() {
+  try {
+    const res = await fetch("project/backend/logout.php", {
+      method: "GET",
+      credentials: "include"
+    });
+    if (res.ok) {
+      // Intentar leer JSON con la ruta de redirección si el backend la devuelve
+      try {
+        const data = await res.json();
+        if (data && data.redirect) {
+          window.location.href = data.redirect;
+          return;
+        }
+      } catch (_) {}
+      // Fallback: redirigir a login
+      window.location.href = "/Proyecto-Camaron/login";
+    } else {
+      console.error("Logout failed: HTTP", res.status);
+    }
+  } catch (error) {
+    console.error("Logout failed:", error);
+  }
+ 
+  
 }
 
 window.onload = async (e) => {
@@ -9,11 +31,11 @@ window.onload = async (e) => {
     method: "GET",
     credentials: "include"
   });
-
   const data = await res.json();
 
-  if (!data) {
-    console.error("Got an error gang");
+  // Si no autenticado, redirigir al login
+  if (!data || data.success === false) {
+    window.location.href = "/Proyecto-Camaron/login";
     return;
   }
   console.log(data.path);

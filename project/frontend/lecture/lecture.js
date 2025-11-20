@@ -1,14 +1,24 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 
-window.onload = async (e) => {
-  // Profile stuff
-  const pfpRes = await fetch("project/backend/getpfp.php", {
-    method: "GET",
-    credentials: "include"
+window.onload = async () => {
+  // ----------------Probar la sesión---------------- //
+  // Llama a la imagen para ver si hay sesión
+  const sessionRes = await fetch("project/backend/getpfp.php", {
+      method: "GET",
+      credentials: "include"
   });
 
-  const pfpData = await pfpRes.json();
+  // Verificación de sesión
+  const sessionData = await sessionRes.json();
+  if (!sessionData || sessionData.success === false) {
+      window.location.href = "/Proyecto-Camaron/login";
+      return;
+  }
+  // ----------------------------------------------- //
+
+  // Profile stuff
+  const pfpData = sessionData;
 
   if (!pfpData) {
     console.error("Got an error gang");

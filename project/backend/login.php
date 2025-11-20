@@ -27,6 +27,8 @@ $row = $result->fetch_assoc();
 // Comprobar usuario y contraseña (Contraseña hashed)
 if (password_verify($password, $row["password"])) {
   session_start();
+  // Regenerar id de sesión al iniciar sesión para evitar reutilización
+  session_regenerate_id(true);
   $_SESSION["pfpPath"] = $row["pfp_path"];
   $_SESSION["user"] = $row["user"];
   $_SESSION["name"] = $row["name"];

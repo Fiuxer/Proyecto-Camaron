@@ -1,4 +1,7 @@
-window.onload = () => {
+window.onload = async () => {
+
+
+
   const t2 = SplitText('.text2');
   const color1 = '#5995fbff';
   const color2 = '#ffffffff';
