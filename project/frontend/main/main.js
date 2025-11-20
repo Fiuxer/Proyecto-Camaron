@@ -43,7 +43,6 @@ window.onload = async (e) => {
   const lecturesData = await lecturesRes.json();
 
   
-  // console.log(lecturesData);
 
   if (!lecturesData || !Array.isArray(lecturesData)) {
     console.error("No data");
