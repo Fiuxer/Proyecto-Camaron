@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
-
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap");
 * {
   --font: "Rubik Bubbles";
   font-family: Rubik Bubbles;
   letter-spacing: 1.1px;
+  --color1: #2c3d81;
 }
 
 html {
@@ -15,8 +16,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(circle at center, #1e3f5e 0%, #102537 100%);
-  font-family: 'Rubik Bubbles', cursive;
+  background-color: #FFFFFF;
+  font-family: "Rubik Bubbles", cursive;
   width: calc(100% - 30px);
   height: calc(100% - 30px);
   margin: 0;
@@ -25,14 +26,16 @@ body {
   grid-template-rows: 90px 1fr 90px;
   gap: 15px;
   margin: 15px;
-  color: #e9f9ff;
+  color: var(--color1);
   overflow: hidden;
 }
 
 /* ======= CUADRO DE LOGIN ======= */
 #login-form {
-  background-color: #2c5a7a;
-  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.4039215686);
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
+  border-radius: 3px;
   padding: 40px 35px;
   width: 270px;
   display: flex;
@@ -43,63 +46,57 @@ body {
   grid-column: 2;
   grid-row: 2;
   justify-self: center;
+  /* ======= CAMPOS (login) ======= */
+  /* ======= BOTÓN LOGIN ======= */
+  /* Imagen de avatar */
 }
-
-/* ======= CAMPOS (login) ======= */
-#login-form input[type="text"],
-#login-form input[type="password"] {
-  background-color: #3b6c8d;
-  border: 1px solid #8fd4f5;
-  border-radius: 6px;
+#login-form input[type=text],
+#login-form input[type=password] {
+  background-color: var(--color1);
+  border: 1px solid var(--color1);
+  border-radius: 3px;
   padding: 8px;
   width: 100%;
   outline: none;
-  color: #e4f8ff;
+  color: #FFFFFF;
   font-weight: bold;
   font-size: 0.8rem;
   transition: all 0.2s ease;
 }
-
-#login-form input[type="text"]:focus,
-#login-form input[type="password"]:focus {
-  box-shadow: 0 0 6px #8fd4f5;
+#login-form input[type=text]:focus,
+#login-form input[type=password]:focus {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4039215686);
 }
-
-/* Imagen de avatar */
-#login-form::before {
-  content: "";
-  background: url('https://cdn-icons-png.flaticon.com/512/847/847969.png') no-repeat center center;
-  background-size: 80px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 4px solid #77c4f2;
-  margin-bottom: 15px;
-}
-
-/* ======= BOTÓN LOGIN ======= */
-#login-form button[type="submit"] {
- 
+#login-form button[type=submit] {
   position: relative;
   margin-top: 10px;
-  background-color: #6bbfea;
+  background-color: var(--color1);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 8px 25px;
   font-size: 0.9rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
 }
-
-#login-form button[type="submit"]:hover {
-  background-color: #8fd4f5;
+#login-form button[type=submit]:hover {
+  background-color: rgba(44, 61, 129, 0.8352941176);
   box-shadow: 0 0 10px rgba(143, 212, 245, 0.5);
+}
+#login-form::before {
+  content: "";
+  background: url("https://cdn-icons-png.flaticon.com/512/847/847969.png") no-repeat center center;
+  background-size: 80px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid var(--color1);
+  margin-bottom: 15px;
 }
 
 p {
-  color: #d9f3ff;
+  color: #000000;
   font-weight: bold;
   font: normal normal normal 18px/22px Rubik Bubbles;
   letter-spacing: 1.1;
@@ -108,28 +105,42 @@ p {
 
 footer {
   position: static;
-  background-color: #2c5a7a;
+  background-color: transparent;
   grid-column: span 3;
   grid-row: 3;
   border-radius: 3px;
   padding: 12px 20px;
   display: flex;
   align-items: center;
-  box-shadow: 0px 3px 12px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4039215686);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
 }
-
-/* Botones inferiores */
+footer > p {
+  color: var(--color1);
+}
 footer button {
-  background-color: #6bbfea;
-  color: white;
+  background-color: transparent;
+  color: var(--color1);
   border: none;
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 8px 25px;
   font-size: 0.9rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
   margin-left: 4%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4039215686);
+}
+footer button p {
+  color: var(--color1);
+}
+footer button:hover {
+  background-color: var(--color1);
+  color: #FFFFFF;
+}
+footer button:hover p {
+  color: #FFFFFF;
 }
 
 /* ===== PARA EL REGISTER ===== */
@@ -140,15 +151,16 @@ footer button {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 999;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4039215686);
 }
+
 #register-form {
-  background-color: #2c5a7a;
+  background-color: rgba(255, 255, 255, 0.4039215686);
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 15px;
-  border-radius: 6px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+  border-radius: 4px;
   width: 100%;
   max-width: 480px;
   box-sizing: border-box;
@@ -157,84 +169,76 @@ footer button {
   grid-row: 2;
   justify-self: center;
   align-self: center;
+  /* botones de register */
+  /* Crear cuenta */
+  /* la pfp */
 }
-
-/* botones de register */
-#register-form input[type="text"],
-#register-form input[type="password"],
-#register-form input[type="email"],
-#register-form input[type="file"] {
-  background-color: #3b6c8d;
-  border: 1px solid #8fd4f5;
-  border-radius: 6px;
+#register-form input {
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 3px;
   padding: 8px 10px;
   width: 100%;
   outline: none;
-  color: #e4f8ff;
+  color: var(--color1);
   font-weight: bold;
   font-size: 0.9rem;
   transition: all 0.15s ease;
   box-sizing: border-box;
 }
-
-#register-form input[type="file"] {
+#register-form input[type=file] {
   padding: 6px 10px;
-  color: #e4f8ff;
+  color: #FFFFFF;
   font-weight: normal;
 }
-
 #register-form input:focus {
-  box-shadow: 0 0 8px rgba(143,212,245,0.25);
-  border-color: #77c4f2;
+  box-shadow: 0 0 6px rgba(44, 61, 129, 0.6470588235);
+  border-color: var(--color1);
 }
-
-/* Crear cuenta */
-#register-form button[type="submit"] {
+#register-form button[type=submit] {
   align-self: flex-end;
-  background-color: #6bbfea;
-  color: white;
-  border-radius: 10px;
+  background-color: #FFFFFF;
+  color: var(--color1);
+  border-radius: 4px;
   padding: 8px 20px;
   font-size: 0.95rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4039215686);
   border: none;
-  position: relative; 
+  position: relative;
+  transition: all 0.2s;
 }
-
-#register-form button[type="submit"]:hover {
-  background-color: #8fd4f5;
+#register-form button[type=submit]:hover {
+  background-color: var(--color1);
+  color: #FFFFFF;
 }
-
-/* la pfp */
-#register-form input[type="file"]::file-selector-button {
+#register-form input[type=file]::file-selector-button {
   align-self: flex-end;
-  background-color: #6bbfea;
-  color: white;
-  border-radius: 10px;
+  background-color: #FFFFFF;
+  color: var(--color1);
+  border-radius: 4px;
   padding: 8px 20px;
   font-size: 0.95rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   border: none;
-  transition: all 0.15s ease;
+  font-family: Rubik Bubbles;
+  transition: all 0.2s ease;
 }
-
-#register-form input[type="file"]::file-selector-button:hover {
-  background-color: #8fd4f5;
-  transition: all 0.15s ease;
+#register-form input[type=file]::file-selector-button:hover {
+  background-color: var(--color1);
+  color: #FFFFFF;
 }
 
 /* ===== ALL TS IS FOR THE MAIN PAGE ===== */
-
 aside {
   position: static;
   width: 100%;
   height: 100%;
   border-radius: 4px;
-  background-color: #2c5a7a;
+  background-image: linear-gradient(to top left, #2c3d81, rgba(44, 61, 129, 0.8431372549), #2c3d81);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -243,20 +247,18 @@ aside {
   grid-row: 2;
   justify-content: space-evenly;
 }
-
 aside img {
   aspect-ratio: 1/1;
   width: 40%;
   border-radius: 50%;
 }
-
 aside p {
   text-transform: capitalize;
 }
 
 header {
   position: static;
-  background-color: #2c5a7a;
+  background-color: transparent;
   border-radius: 3px;
   grid-column: span 3;
   grid-row: 1;
@@ -266,8 +268,11 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4039215686);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  color: var(--color1);
 }
-
 header .account-name-div {
   aspect-ratio: 7/1;
   position: inherit;
@@ -279,26 +284,25 @@ header .account-name-div {
   align-items: center;
   gap: 10px;
 }
-
 header .account-name-div img {
   position: static;
   aspect-ratio: 1/1;
   width: 45px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
-  border: solid #E9F9FF 3px;
+  border: solid var(--color1) 3px;
 }
-
 header .account-name-div p {
   text-transform: capitalize;
-  color: #e9f9ff;
+  color: var(--color1);
   letter-spacing: 1.7px;
   font: normal normal bold 2.3rem var(--font);
 }
 
 main {
   position: static;
-  background-color: #3b6c8d20;
+  background-color: rgba(59, 108, 141, 0.1254901961);
   border-radius: 6px;
   grid-column: span 2;
   grid-row: 2;
@@ -306,7 +310,6 @@ main {
   overflow-y: auto;
   scrollbar-width: none;
 }
-
 main div {
   width: 100%;
   height: 100%;
@@ -316,23 +319,28 @@ main div {
   justify-content: center;
   justify-items: center;
 }
-
 main a {
   text-decoration: none;
   color: white;
   width: 80%;
   height: 300px;
-  background-color: #3b6c8d;
+  background-color: transparent;
   border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4039215686);
   margin: 2%;
   padding: 15px;
+  transition: all linear 0.2s;
+  color: var(--color1);
+}
+main a:hover {
+  background-color: var(--color1);
+  color: #FFFFFF;
 }
 
 /* ===== ES CHISTE PROFE ===== */
-
 .ad-div {
   position: fixed;
-  background-color: #2c5a7a;
+  background-color: var(--color1);
   width: 97%;
   height: 94%;
   z-index: 100;
@@ -342,30 +350,64 @@ main a {
   gap: 10px;
   padding: 10px;
   align-items: center;
-
-  div {
-    width: 100%;
-    height: 60%;
-    background-color: #6bbfea;
-    border-radius: 7px;
-    align-items: center;
-    align-content: center;
-    h2 {
-      text-transform: uppercase;
-    }
-  }
+}
+.ad-div div {
+  width: 100%;
+  height: 60%;
+  background-color: #6bbfea;
+  border-radius: 7px;
+  align-items: center;
+  align-content: center;
+}
+.ad-div div h2 {
+  text-transform: uppercase;
 }
 
 .lecture-text {
   font-family: Arial, Helvetica, sans-serif;
   padding: 15px;
 }
-
 .lecture-text * {
   font-family: inherit;
 }
-
 .lecture-text h1:first-of-type {
   font-family: Rubik Bubbles;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
 }
+
+/* Backgroud Images and circles and sutff */
+.background-circles {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  z-index: -1000;
+}
+
+.circle1, .circle2, .circle3, .circle {
+  position: fixed;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  z-index: inherit;
+  border: #77c4f2 1px solid;
+  filter: blur(0.2rem);
+}
+
+.circle1 {
+  width: 600px;
+  translate: -50% -50%;
+}
+
+.circle2 {
+  bottom: 0px;
+  right: 0px;
+  width: 500px;
+  translate: 0 50%;
+}
+
+.circle3 {
+  width: 400px;
+  bottom: 0px;
+  left: 200px;
+}
+
+/* pwypfbn4 *//*# sourceMappingURL=style.css.map */
