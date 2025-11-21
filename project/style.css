@@ -287,7 +287,7 @@ header .account-name-div {
   align-items: center;
   gap: 10px;
 }
-header .account-name-div img {
+header .account-name-div .pfp-holder {
   position: static;
   aspect-ratio: 1/1;
   width: 45px;
@@ -301,6 +301,10 @@ header .account-name-div p {
   color: var(--color1);
   letter-spacing: 1.7px;
   font: normal normal bold 2.3rem var(--font);
+}
+header .account-name-div .streak-image {
+  aspect-ratio: 1/1;
+  height: 80%;
 }
 
 main {

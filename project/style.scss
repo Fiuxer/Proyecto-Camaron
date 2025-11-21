@@ -305,21 +305,26 @@ header {
     align-items: center;
     gap: 10px;
     
-      img {
-        position: static;
-        aspect-ratio: 1/1;
-        width: 45px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: solid var(--color1) 3px;
-      }
-      
-      p {
-        text-transform: capitalize;
-        color: var(--color1);
-        letter-spacing: 1.7px;
-        font: normal normal bold 2.3rem var(--font);
-      }
+    .pfp-holder {
+      position: static;
+      aspect-ratio: 1/1;
+      width: 45px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: solid var(--color1) 3px;
+    }
+    
+    p {
+      text-transform: capitalize;
+      color: var(--color1);
+      letter-spacing: 1.7px;
+      font: normal normal bold 2.3rem var(--font);
+    }
+
+    .streak-image {
+      aspect-ratio: 1/1;
+      height: 80%;
+    }
   }
 }
 
