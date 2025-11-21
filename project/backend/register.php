@@ -20,7 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $targetDir = 'uploads/';
   $filename = basename($_FILES['pfp']['name']);
   $targetFilePath = $targetDir . uniqid() . "_" . $filename;
-  move_uploaded_file($_FILES["pfp"]["tmp_name"], $targetFilePath);
+  if(!move_uploaded_file($_FILES["pfp"]["tmp_name"], $targetFilePath)) {
+    echo json_encode(["message"=> "Could not upload pfp, process canceled"]);
+    exit();
+  }
 
   // Insertar a db
   $stmt = $conn->prepare("INSERT INTO users(name, user, email, password, pfp_path) VALUES(?, ?, ?, ?, ?)");
