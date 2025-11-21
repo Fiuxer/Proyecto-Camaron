@@ -29,6 +29,7 @@ if (password_verify($password, $row["password"])) {
   session_start();
   // Regenerar id de sesión al iniciar sesión para evitar reutilización
   session_regenerate_id(true);
+  $_SESSION["id"] = $row["id"];
   $_SESSION["pfpPath"] = $row["pfp_path"];
   $_SESSION["user"] = $row["user"];
   $_SESSION["name"] = $row["name"];

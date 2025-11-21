@@ -27,8 +27,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $stmt->bind_param("sssss", $name, $username, $email, $hash, $targetFilePath);
 
   if ($stmt->execute()) {
-    echo json_encode(["message"=> "Usuario registrado exitosamente"]);
+    $userid = $conn->insert_id;
+    $streak = 0;
+    $date = date("Y-m-d");
+    $level = 1;
+    $exp = 0;
+
+    $stmt = $conn->prepare("INSERT INTO user_data(user_id, streak, last_login, user_level, user_exp) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("iisii", $userid, $streak, $date, $level, $exp );
+
+    if ($stmt->execute()) {
+      echo json_encode(["message"=> "Usuario registrado exitosamente"]);
+    } else {
+      echo json_encode(["message"=> "Error: No se pudo agregar a la base de datos"]);
+    }
   } else {
     echo json_encode(["message"=> "Error: Puede que el usuario ya exista"]);
   }
+
 }
