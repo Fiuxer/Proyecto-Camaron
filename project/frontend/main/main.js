@@ -83,7 +83,24 @@ window.onload = async (e) => {
     a.appendChild(article);
     container.appendChild(a);
   });
-  
+
+  const streak = document.querySelector(".streak-text");
+  const streakImage = document.querySelector(".streak-image");
+  const streakRes = await fetch("project/backend/streak.php", {
+    method: "GET",
+    credentials: "include",
+  });
+
+  const streakData = await streakRes.json();
+  if (streakData.success) {
+    streak.textContent = streakData.streak;
+
+    //Set image
+    streakImage.src = !streak.lost ? "project/backend/uploads/streak_active.png" : "project/backend/uploads/streak_unactive.png" ;
+
+  } else {
+    console.error("Yeah idk where gang :wilted-flower:");
+  }
 };
 
 const searchInput = document.getElementById("search");
