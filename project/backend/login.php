@@ -34,6 +34,7 @@ if (password_verify($password, $row["password"])) {
   $_SESSION["user"] = $row["user"];
   $_SESSION["name"] = $row["name"];
   echo json_encode(["redirect"=> "/Proyecto-Camaron/main"]);
+  setcookie("isLogged","true", time() + 5,"/");
   exit();
 } else {
   echo json_encode(["message"=> "Credenciales incorrectas"]);

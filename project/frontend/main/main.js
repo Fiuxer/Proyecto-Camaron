@@ -134,4 +134,6 @@ searchInput.addEventListener('input', async (event) => {
     a.appendChild(article);
     container.appendChild(a);
   });
+
+  fetch("project/backend/cookies.php")
 });

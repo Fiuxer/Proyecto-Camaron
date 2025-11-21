@@ -3,6 +3,18 @@
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = str_replace('/Proyecto-Camaron/', '', $uri);
 
+// Logged in → renew cookie
+if (isset($_COOKIE["isLogged"])) {
+  setcookie("isLogged","true", time() + 5,"/");
+} else {
+  // Not logged in → if not homepage, redirect
+  if (!in_array($uri, ['', 'login', 'register'])) {
+    header('Location: /Proyecto-Camaron/login');
+    exit; // <— CRITICAL
+  }
+}
+
+// Router
 switch ($uri) {
   case '':
     include 'project/frontend/homepage/home.html';
