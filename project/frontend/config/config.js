@@ -5,9 +5,13 @@ const res = await fetch("project/backend/getpfp.php", {
     method: "GET",
     credentials: "include"
 });
+const data = await res.json();
+console.log(data.path);
+img = document.querySelector(".pfp-img");
+img.src = data.path;
 
 // Verificación de sesión
-const data = await res.json();
+
 if (!data || data.success === false) {
     window.location.href = "/Proyecto-Camaron/login";
     return;
@@ -51,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     const json = await resp.json();
     result.textContent = json.message || 'Hecho';
-    if (json.ok) pfpPreview.src = 'project/backend/getpfp.php?ts=' + Date.now();
+    
   });
 
   logoutBtn.addEventListener('click', async () => {
@@ -82,8 +86,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (data.ok) {
         result.style.color = '#09c009ff';
         result.textContent = data.message || 'Actualizado';
-        // refresh avatar
-        pfpPreview.src = 'project/backend/getpfp.php?ts=' + Date.now();
       } else {
         result.style.color = '#7d3232ff';
         result.textContent = data.message || 'Error';

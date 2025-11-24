@@ -102,7 +102,7 @@ try {
     if (!in_array($ext, $allowed)) throw new Exception('Formato de imagen no permitido');
     
     $subfolder = 'uploads/';
-    $newName = 'pfp_' . $userId . '_' . time() . '.' . $ext;
+    $newName = uniqid() . $userId . '_' . time() . '.' . $ext;
     $dst = $uploadDir . $newName;
     $databasedir = ($subfolder . $newName);
     if (!move_uploaded_file($f['tmp_name'], $dst)) throw new Exception('No se pudo guardar la imagen');
