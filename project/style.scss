@@ -432,11 +432,191 @@ main {
 }
 
 // Search quedy
-#search {
+#file_search {
   width: 40%;
   height: 40px;
   border-radius: 20px 10px 20px 10px;
   border: var(--color1) 3px solid;
   padding-left: 20px;
   color: var(--color1);
+}
+
+
+/* PROFILE CONFIG THINGS */
+
+/* Header */
+.cfg-header {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  color: var(--color1);
+  backdrop-filter: blur(0.4rem);
+  box-shadow: 0 0 6px #00000067;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.cfg-header h1 {
+  font-family: var(--font);
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
+}
+
+/* Main container */
+.cfg-body {
+  background-color: #FFFFFF;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color1);
+}
+
+.cfg-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+/* Card */
+.cfg-card {
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+  border-radius: 6px;
+  background-color: #3b6c8d20;
+  backdrop-filter: blur(0.3rem);
+  box-shadow: 0 0 8px #00000067;
+  width: 90%;
+  max-width: 900px;
+}
+
+/* PFP Column */
+.pfp-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.pfp-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color1);
+}
+
+/* Buttons universal */
+.btn {
+  background-color: var(--color1);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  border: none;
+  transition: 0.2s;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #2c3d81D7;
+}
+
+.btn.outline {
+  background-color: transparent;
+  color: var(--color1);
+  border: 2px solid var(--color1);
+}
+
+.btn.outline:hover {
+  background-color: var(--color1);
+  color: white;
+}
+
+.btn.small {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+}
+
+.btn.primary {
+  background-color: var(--color1);
+  color: white;
+}
+
+/* Form */
+.cfg-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cfg-form label {
+  font-weight: bold;
+  color: var(--color1);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.cfg-form input {
+  background-color: #FFFFFF;
+  border: 2px solid var(--color1);
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 0.9rem;
+  font-family: var(--font);
+  letter-spacing: 1px;
+  color: var(--color1);
+}
+
+.cfg-form input:focus {
+  box-shadow: 0 0 8px #2c3d81A5;
+}
+
+/* Separador */
+.cfg-form hr {
+  border: none;
+  border-top: 2px solid var(--color1);
+  margin: 10px 0;
+}
+
+/* Buttons actions */
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Footer */
+.cfg-footer {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+.cfg-footer .link {
+  color: var(--color1);
+  font-family: var(--font);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.cfg-footer .link:hover {
+  text-decoration: underline;
+}
+
+/* Result text */
+.result {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color1);
+  font-size: 0.9rem;
+  margin-top: 5px;
 }

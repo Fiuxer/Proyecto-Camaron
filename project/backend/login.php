@@ -26,6 +26,8 @@ $row = $result->fetch_assoc();
 
 // Comprobar usuario y contraseña (Contraseña hashed)
 if (password_verify($password, $row["password"])) {
+
+  session_set_cookie_params(60*60*24*7, '/');
   session_start();
   // Regenerar id de sesión al iniciar sesión para evitar reutilización
   session_regenerate_id(true);
@@ -33,12 +35,13 @@ if (password_verify($password, $row["password"])) {
   $_SESSION["pfpPath"] = $row["pfp_path"];
   $_SESSION["user"] = $row["user"];
   $_SESSION["name"] = $row["name"];
+
+  setcookie("isLogged", "true", time() + 60*60*24*7, "/");
   echo json_encode(["redirect"=> "/Proyecto-Camaron/main"]);
-  setcookie("isLogged","true", time() + 5,"/");
   exit();
 } else {
   echo json_encode(["message"=> "Credenciales incorrectas"]);
 }
 
 $stmt->close();
-$conn->close(); 
+$conn->close();

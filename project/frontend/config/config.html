@@ -1,41 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="project/style.css">
-  <title>Register</title>
+  <title>Configuración de perfil</title>
 </head>
-<body>
-  <header>
-    <h2>Configuraci&oacute;n de perfil</h2>
+<body class="cfg-body">
+  <header class="cfg-header">
+    <h1>Configuración de perfil</h1>
   </header>
 
-  <main class="register-main">
-    <form id="register-form">
-      <input type="text" name="name" id="name" placeholder="Nombre">
-      <input type="text" name="user" id="user" placeholder="Usuario" required>
-      <input type="password" name="password" id="password" placeholder="Contraseña" required>
-      <input type="password" name="confirm" id="confirm" placeholder="Confirmar contraseña" required>
-      <input type="text" name="email" id="email" placeholder="email@example" required>
-      <input type="file" name="pfp" id="pfp" accept="image/*">
-      <button type="submit">Crear cuenta</button>
-    </form>
-    <p id="result"></p>
+  <main class="cfg-main">
+    <section class="cfg-card">
+      <div class="pfp-column">
+        <img id="pfp-preview" alt="Avatar" class="pfp-img" src="project/backend/getpfp.php" />
+        <label for="pfp" class="btn small">Cambiar foto</label>
+        <input id="pfp" name="pfp" type="file" accept="image/*" hidden>
+        <button id="remove-pfp" class="btn outline small">Eliminar foto</button>
+      </div>
+
+      <form id="profile-form" class="cfg-form">
+        <label>Nombre
+          <input id="name" name="name" type="text" placeholder="Tu nombre">
+        </label>
+
+        <label>Usuario
+          <input id="user" name="user" type="text" placeholder="usuario" required>
+        </label>
+
+        <label>Email
+          <input id="email" name="email" type="email" placeholder="email@ejemplo.com">
+        </label>
+
+        <hr>
+
+        <label>Contraseña actual
+          <input id="current-password" name="current" type="password" placeholder="Contraseña actual">
+        </label>
+
+        <label>Nueva contraseña
+          <input id="new-password" name="new" type="password" placeholder="Nueva contraseña">
+        </label>
+
+        <label>Confirmar nueva contraseña
+          <input id="confirm-password" name="confirm" type="password" placeholder="Confirmar contraseña">
+        </label>
+
+        <div class="actions">
+          <button id="save-btn" type="submit" class="btn primary">Guardar cambios</button>
+          <button id="logout-btn" type="button" class="btn outline">Cerrar sesión</button>
+          <p id="result" class="result"></p>
+        </div>
+
+        
+      </form>
+    </section>
   </main>
 
-  <footer>
-    <a href="/Proyecto-Camaron/main">
-      <button>
-        <p>Regresar</p>
-      </button>
-    </a>
+  <footer class="cfg-footer">
+    <a href="/Proyecto-Camaron/main" class="link">Volver</a>
   </footer>
-  
-  <div class="background-circles">
-  </div>      
-  
-  
-    <script src="project/frontend/config/config.js"></script>
+
+  <script src="project/frontend/config/config.js"></script>
 </body>
 </html>
