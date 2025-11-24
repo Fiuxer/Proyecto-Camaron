@@ -5,7 +5,7 @@ $uri = str_replace('/Proyecto-Camaron/', '', $uri);
 
 // Logged in → renew cookie
 if (isset($_COOKIE["isLogged"])) {
-  setcookie("isLogged","true", time() + 5,"/");
+  setcookie("isLogged","true", time() + 3600,"/");
 } else {
   // Not logged in → if not homepage, redirect
   if (!in_array($uri, ['', 'login', 'register'])) {

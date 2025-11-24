@@ -623,3 +623,64 @@ main {
   font-size: 0.9rem;
   margin-top: 5px;
 }
+
+// All that duolingo type shit
+
+.m-duolingo {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding-inline: 15px;
+
+  $cont: str-slice("#{&}", 2);    // Do I explain all ts? Like is it necessary?
+  [class^="#{$cont}__answer"] {   // Cus I mean I understand it very well but it tags all classes with .m-duolingo__answer
+                                  // You can js do [class*="__answer"] {} or [class^=".m-duolingo__answer"] or &[class*="answer"]
+    background-color: #FFFFFF;
+    color: var(--color1);
+    height: 3rem;
+    width: auto;
+    border: var(--color1) 3px solid;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: #FFFFFF;
+      background-color: var(--color1);
+      border-color: #FFFFFF;
+    }
+  }
+
+  &__questionNumber {
+    grid-column: 1;
+    grid-row: 1;
+    color: #FFFFFF;
+  }
+
+  &__questionContent {
+    grid-column: span 2;
+    grid-row: 2;
+    color: #FFFFFF;
+  }
+
+  &__answer1 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  &__answer2 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  
+  &__answer3 {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  
+  &__answer4 {
+    grid-column: 2;
+    grid-row: 4;
+  }
+}
