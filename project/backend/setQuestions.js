@@ -26,3 +26,27 @@ buttons.addEventListener("click or sum I don't remember", (element) => {
   }
 })
 */
+
+const shuffle = [1, 2, 3, 4, 5];
+
+function shuffleArray(A) {
+  let currentIndex = A.length,
+    randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [A[currentIndex], A[randomIndex]] = [
+      A[randomIndex],
+      A[currentIndex],
+    ];
+  }
+
+  return A;
+}
+
+console.log(shuffleArray(shuffle));
