@@ -399,7 +399,7 @@ main a:hover {
   filter: blur(0.2rem);
 }
 
-#file_search {
+#search {
   width: 40%;
   height: 40px;
   border-radius: 20px 10px 20px 10px;
