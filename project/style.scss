@@ -627,9 +627,13 @@ main {
 // All that duolingo type shit
 
 .m-duolingo {
+  &::before {
+    content: "->";
+  }
+
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: 1fr 5fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   padding-inline: 15px;
@@ -639,11 +643,12 @@ main {
                                   // You can js do [class*="__answer"] {} or [class^=".m-duolingo__answer"] or &[class*="answer"]
     background-color: #FFFFFF;
     color: var(--color1);
-    height: 3rem;
+    height: 5rem;
     width: auto;
     border: var(--color1) 3px solid;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
+    font-size: 0.7rem;
 
     &:hover {
       color: #FFFFFF;

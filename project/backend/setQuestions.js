@@ -27,7 +27,8 @@ buttons.addEventListener("click or sum I don't remember", (element) => {
 })
 */
 
-const shuffle = ["Correcta", "Inc1", "Inc2", "Inc3"];
+const params2 = new URLSearchParams(window.location.search);
+const id2 = params2.get('id');
 
 function shuffleArray(A) {
   let cInd = A.length, rInd;
@@ -40,5 +41,26 @@ function shuffleArray(A) {
     ];
   } return A;
 }
-console.log("SOME LONG ASS QUESTION TYPE SHIT");
-console.log(shuffleArray(shuffle));
+
+window.addEventListener = ("load", async () => {
+
+  const res = await fetch(`project/backend/fetchQuestions.php?id=${id2}`, { // Uses fetchQuestions.php
+    method: "GET",
+    credentials: "include"
+  });
+
+  const data = await res.json();
+
+  if(data.error) {
+    console.error("There was an error fetching the data: " + data.body);
+    return;
+  } else if (!data) {
+    console.error("There was no data fetched");
+    return;
+  }
+
+  const jsonData = data.body;
+  const question = jsonData['question'];
+  const answers = jsonData['incorrect-answers'];
+  console.log(answers);
+});

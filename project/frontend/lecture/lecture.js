@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 
-window.onload = async () => {
+window.addEventListener("load", async () => {
   // ----------------Probar la sesión---------------- //
   // Llama a la imagen para ver si hay sesión
   const sessionRes = await fetch("project/backend/getpfp.php", {
@@ -56,4 +56,4 @@ window.onload = async () => {
     MathJax.typesetPromise();
   }
 
-}
+});
