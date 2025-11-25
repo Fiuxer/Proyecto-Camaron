@@ -27,7 +27,7 @@ buttons.addEventListener("click or sum I don't remember", (element) => {
 })
 */
 
-const shuffle = [1, 2, 3, 4, 5];
+const shuffle = ["Correcta", "Inc1", "Inc2", "Inc3"];
 
 function shuffleArray(A) {
   let cInd = A.length, rInd;
@@ -40,5 +40,5 @@ function shuffleArray(A) {
     ];
   } return A;
 }
-
+console.log("SOME LONG ASS QUESTION TYPE SHIT");
 console.log(shuffleArray(shuffle));
