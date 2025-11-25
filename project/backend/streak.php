@@ -22,6 +22,7 @@ if ( $last_login == $today ) {
 } else {
   $newStreak = 1;
   echo json_encode(['success'=> true, 'streak'=> $newStreak, 'lost'=> true]);
+  exit;
 }
 
 if ( $newStreak == 0 ) {

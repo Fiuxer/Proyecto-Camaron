@@ -42,7 +42,7 @@ function shuffleArray(A) {
   } return A;
 }
 
-window.addEventListener = ("load", async () => {
+window.addEventListener("load", async () => {
 
   const res = await fetch(`project/backend/fetchQuestions.php?id=${id2}`, { // Uses fetchQuestions.php
     method: "GET",
@@ -59,8 +59,17 @@ window.addEventListener = ("load", async () => {
     return;
   }
 
-  const jsonData = data.body;
+  const jsonData = JSON.parse(data.body.json);
   const question = jsonData['question'];
   const answers = jsonData['incorrect-answers'];
-  console.log(answers);
+  answers.push(jsonData['correct-answer']);
+  const shuffled = shuffleArray(answers);
+
+  // FILL VALUES FOR THE PREGUNTAS IYKYK
+  const questionText = document.querySelector(".m-duolingo__questionContent");
+  questionText.textContent = question;
+  for (let i = 0; i < 4; i++) {
+    const asnwerText = document.querySelector(`.m-duolingo__answer${i+1}`);
+    asnwerText.textContent = shuffled[i];
+  }
 });
