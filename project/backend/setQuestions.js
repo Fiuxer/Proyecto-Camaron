@@ -44,14 +44,14 @@ function shuffleArray(A) {
 
 window.addEventListener("load", async () => {
 
-  const res = await fetch(`project/backend/fetchQuestions.php?id=${id2}`, { // Uses fetchQuestions.php
+  const res = await fetch(`project/backend/fetchQuestions.php?id=${id2}`, { // Usa fetchQuestions.php
     method: "GET",
     credentials: "include"
   });
 
   const data = await res.json();
 
-  if(data.error) {
+  if(data.error) { // Sum errors just in case de que tenemos oneathose errores
     console.error("There was an error fetching the data: " + data.body);
     return;
   } else if (!data) {
@@ -59,6 +59,7 @@ window.addEventListener("load", async () => {
     return;
   }
 
+  // Get all las ecuaciones and preguntas type shit
   const jsonData = JSON.parse(data.body.json);
   const question = jsonData['question'];
   const answers = jsonData['incorrect-answers'];
@@ -71,5 +72,15 @@ window.addEventListener("load", async () => {
   for (let i = 0; i < 4; i++) {
     const asnwerText = document.querySelector(`.m-duolingo__answer${i+1}`);
     asnwerText.textContent = shuffled[i];
+    let isCorrect = shuffled[i] === jsonData['correct-answer'];
+    // Si el boton tiene el correct answer then we say good stuff
+    asnwerText.addEventListener("click", () => {
+      if (isCorrect) {
+        alert("CORRECT ANSWER ONG");
+      } else { // Sino ps we do el deste de you stupid
+        alert("BRO YOU SO STUPID");
+      }
+    });
   }
 });
+
