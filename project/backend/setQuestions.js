@@ -59,28 +59,41 @@ window.addEventListener("load", async () => {
     return;
   }
 
-  // Get all las ecuaciones and preguntas type shit
-  const jsonData = JSON.parse(data.body.json);
-  const question = jsonData['question'];
-  const answers = jsonData['incorrect-answers'];
-  answers.push(jsonData['correct-answer']);
-  const shuffled = shuffleArray(answers);
-
-  // FILL VALUES FOR THE PREGUNTAS IYKYK
+  
+  const questionArray = data.body;
+  let currentIndex = 0;
+  
   const questionText = document.querySelector(".m-duolingo__questionContent");
-  questionText.textContent = question;
-  for (let i = 0; i < 4; i++) {
-    const asnwerText = document.querySelector(`.m-duolingo__answer${i+1}`);
-    asnwerText.textContent = shuffled[i];
-    let isCorrect = shuffled[i] === jsonData['correct-answer'];
-    // Si el boton tiene el correct answer then we say good stuff
-    asnwerText.addEventListener("click", () => {
-      if (isCorrect) {
-        alert("CORRECT ANSWER ONG");
-      } else { // Sino ps we do el deste de you stupid
-        alert("BRO YOU SO STUPID");
+  const asnwerText = [
+    document.querySelector("m-duolingo__answer1"),
+    document.querySelector("m-duolingo__answer2"),
+    document.querySelector("m-duolingo__answer3"),
+    document.querySelector("m-duolingo__answer4"),
+  ];
+
+  function loadQuestions() {
+    const q = questionArray[currentIndex];
+    const answers = q['incorrect-answers'];
+    answers.push(q['correct-answer']);
+    const shuffled = shuffleArray(answers);
+
+    questionText.textContent = q['question'];
+
+    asnwerText.forEach((btn, i) => {
+      btn.textContent = shuffled[i];
+      const isCorrect = shuffled[i] === q['correct-answer'];
+      console.log(shuffled[i]);
+      
+      btn.onclick = () => {
+        if (isCorrect) {
+          console.log("Yoooo W speed");
+        } else {
+          console.log("U never getting into Agartha");
+        }
       }
     });
+
   }
+  loadQuestions();
 });
 
