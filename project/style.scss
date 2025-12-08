@@ -523,34 +523,43 @@ main {
   font-family: var(--font);
   font-size: 0.85rem;
   border: none;
-  transition: 0.2s;
   text-align: center;
   display: inline-block;
-}
+  transition: all 0.2s;
+  
+  &:hover {
+    background-color: #2c3d81D7;
+    box-shadow: 0 0 6px #FFFFFF67;
+    rotate: 5deg;
+    scale: 110%;
+  }
 
-.btn:hover {
-  background-color: #2c3d81D7;
-}
-
-.btn.outline {
-  background-color: transparent;
-  color: var(--color1);
-  border: 2px solid var(--color1);
-}
-
-.btn.outline:hover {
-  background-color: var(--color1);
-  color: white;
-}
-
-.btn.small {
-  padding: 6px 14px;
-  font-size: 0.8rem;
-}
-
-.btn.primary {
-  background-color: var(--color1);
-  color: white;
+  &:active {
+    background-color: #2c3d8160;
+    rotate: 3deg;
+    scale: 90%;
+  }
+  
+  .outline {
+    background-color: transparent;
+    color: var(--color1);
+    border: 2px solid var(--color1);
+    
+    &:hover {
+      background-color: var(--color1);
+      color: white;
+    }
+  }
+  
+  .small {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+  
+  .primary {
+    background-color: var(--color1);
+    color: white;
+  }
 }
 
 /* Form */

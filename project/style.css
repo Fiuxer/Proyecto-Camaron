@@ -488,32 +488,35 @@ main a:hover {
   font-family: var(--font);
   font-size: 0.85rem;
   border: none;
-  transition: 0.2s;
   text-align: center;
   display: inline-block;
+  transition: all 0.2s;
 }
-
 .btn:hover {
   background-color: rgba(44, 61, 129, 0.8431372549);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4039215686);
+  rotate: 5deg;
+  scale: 110%;
 }
-
-.btn.outline {
+.btn:active {
+  background-color: rgba(44, 61, 129, 0.3764705882);
+  rotate: 3deg;
+  scale: 90%;
+}
+.btn .outline {
   background-color: transparent;
   color: var(--color1);
   border: 2px solid var(--color1);
 }
-
-.btn.outline:hover {
+.btn .outline:hover {
   background-color: var(--color1);
   color: white;
 }
-
-.btn.small {
+.btn .small {
   padding: 6px 14px;
   font-size: 0.8rem;
 }
-
-.btn.primary {
+.btn .primary {
   background-color: var(--color1);
   color: white;
 }
