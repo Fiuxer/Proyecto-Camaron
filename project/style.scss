@@ -14,23 +14,19 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 2%;
   padding: 0;
   background-color: #FFFFFF;
   font-family: 'Rubik Bubbles', cursive;
-  width: calc(100% - 30px);
-  height: calc(100% - 30px);
-  margin: 0;
+  width: 96%;
+  height: 98%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 90px 1fr 90px;
-  gap: 15px;
-  margin: 15px;
+  gap: 1%;
   color: var(--color1);
   overflow: hidden;
 }
-
-
 
 /* ======= CUADRO DE LOGIN ======= */
 #login-form {
@@ -125,18 +121,6 @@ footer {
   
   button {
     p { color: #FFFFFF; }
-    
-    // background-color: transparent;
-    // color: var(--color1);
-    // border: none;
-    // border-radius: 3px;
-    // padding: 8px 25px;
-    // font-size: 0.9rem;
-    // font-weight: bold;
-    // cursor: pointer;
-    // transition: all 0.2s ease;
-    // margin-left: 4%;
-    // box-shadow: 0 0 6px #00000067;
 
     &:hover {
       background-color: var(--color1);
@@ -314,7 +298,7 @@ header {
       text-transform: capitalize;
       color: var(--color1);
       letter-spacing: 1.7px;
-      font: normal normal bold 2.3rem var(--font);
+      font: normal normal bold min(2.3rem, 5vw) var(--font);
     }
 
     .streak-image {
@@ -455,7 +439,7 @@ main {
 .cfg-header h1 {
   font-family: var(--font);
   letter-spacing: 0.2rem;
-  font-size: 2rem;
+  font-size: min(2rem, 5vw);
 }
 
 /* Main container */
@@ -518,7 +502,7 @@ main {
     color: var(--color1);
     display: flex;
     flex-direction: column;
-    font-size: 0.9rem;
+    font-size: min(0.9rem, 2vw);
   }
   
   input {
@@ -526,7 +510,7 @@ main {
     border: 2px solid var(--color1);
     border-radius: 3px;
     padding: 8px;
-    font-size: 0.9rem;
+    font-size: min(0.9rem, 2vw);
     font-family: var(--font);
     letter-spacing: 1px;
     color: var(--color1);
@@ -566,7 +550,7 @@ main {
 .result {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--color1);
-  font-size: 0.9rem;
+  font-size: min(0.9rem, 2vw);
   margin-top: 5px;
 }
 
@@ -585,12 +569,12 @@ main {
                                   // You can js do [class*="__answer"] {} or [class^=".m-duolingo__answer"] or &[class*="answer"]
                                   background-color: #FFFFFF;
     color: var(--color1);
-    height: 5rem;
+    height: min(5rem, 5vh);
     width: auto;
     border: var(--color1) 3px solid;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
-    font-size: 0.7rem;
+    font-size: min(0.7rem, 1.5rem);
     
     &:hover {
       color: #FFFFFF;
@@ -640,7 +624,7 @@ main {
   border-radius: 4px;
   cursor: pointer;
   font-family: var(--font);
-  font-size: 0.85rem;
+  font-size: min(0.85rem, 1.7vw);
   border: none;
   text-align: center;
   display: inline-block;
@@ -672,7 +656,7 @@ main {
   
   .small {
     padding: 6px 14px;
-    font-size: 0.8rem;
+    font-size: min(0.8rem, 1.7vw);
   }
   
   .primary {
@@ -688,7 +672,7 @@ main {
   border-radius: 4px;
   cursor: pointer;
   font-family: var(--font);
-  font-size: 0.85rem;
+  font-size: min(0.85rem, 1.7vw);
   border: none;
   text-align: center;
   display: inline-block;
@@ -720,11 +704,43 @@ main {
   
   .small {
     padding: 6px 14px;
-    font-size: 0.8rem;
+    font-size: min(0.8rem, 1.7vw);
   }
   
   .primary {
     background-color: var(--color1);
     color: white;
+  }
+}
+
+/* All the media queries for responsiveness type shit */
+@media (min-width: 900px) {
+  .computer {display: block;}
+  .phone {display: none;}
+}
+
+@media (max-width: 900px) {
+  .computer {display: none;}
+  .phone {display: block;}
+
+  aside {
+    display: none;
+  }
+
+  .m-duolingo { display: none; }
+
+  main {
+    grid-column: span 3;
+
+    #container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  header {
+    gap: 0;
+    .account-name-div {
+      display: none;
+    }
   }
 }
