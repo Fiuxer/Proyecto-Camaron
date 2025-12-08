@@ -326,7 +326,7 @@ main div {
   justify-content: center;
   justify-items: center;
 }
-main a {
+main a.lecture-link {
   text-decoration: none;
   color: white;
   width: 80%;
@@ -339,7 +339,7 @@ main a {
   transition: all linear 0.2s;
   color: var(--color1);
 }
-main a:hover {
+main a.lecture-link:hover {
   background-color: var(--color1);
   color: #FFFFFF;
 }

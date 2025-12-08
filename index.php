@@ -37,6 +37,9 @@ switch ($uri) {
   case 'credits':
     include 'project/frontend/credits/credits.html';
     break;
+  case 'congrats':
+    include 'project/frontend/congrats/congrats.html';
+    break;
   default:
     echo '404 🥀';
     break;
