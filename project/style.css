@@ -431,8 +431,8 @@ main a:hover {
 /* Main container */
 .cfg-body {
   background-color: #FFFFFF;
-  width: calc(100% - 30px);
-  height: calc(100% - 30px);
+  width: calc(98% - 30px);
+  height: calc(98% - 30px);
   margin: 15px;
   display: flex;
   flex-direction: column;
@@ -441,7 +441,7 @@ main a:hover {
 }
 
 .cfg-main {
-  width: 100%;
+  width: 98%;
   display: flex;
   justify-content: center;
   padding: 15px;
@@ -567,15 +567,10 @@ main a:hover {
   width: 100%;
   padding: 15px;
   text-align: center;
-}
-.cfg-footer .link {
-  color: var(--color1);
-  font-family: var(--font);
-  text-decoration: none;
-  font-size: 1rem;
-}
-.cfg-footer .link:hover {
-  text-decoration: underline;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 /* Result text */
