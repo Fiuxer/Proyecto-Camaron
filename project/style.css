@@ -490,17 +490,17 @@ main a:hover {
   border: none;
   text-align: center;
   display: inline-block;
-  transition: all 0.2s;
+  transition: all 0.15s;
 }
 .btn:hover {
   background-color: rgba(44, 61, 129, 0.8431372549);
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.4039215686);
-  rotate: 5deg;
+  rotate: 2deg;
   scale: 110%;
 }
 .btn:active {
   background-color: rgba(44, 61, 129, 0.3764705882);
-  rotate: 3deg;
+  rotate: -1deg;
   scale: 90%;
 }
 .btn .outline {
@@ -527,8 +527,8 @@ main a:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  /* Separador */
 }
-
 .cfg-form label {
   font-weight: bold;
   color: var(--color1);
@@ -536,7 +536,6 @@ main a:hover {
   flex-direction: column;
   font-size: 0.9rem;
 }
-
 .cfg-form input {
   background-color: #FFFFFF;
   border: 2px solid var(--color1);
@@ -547,12 +546,9 @@ main a:hover {
   letter-spacing: 1px;
   color: var(--color1);
 }
-
 .cfg-form input:focus {
   box-shadow: 0 0 8px rgba(44, 61, 129, 0.6470588235);
 }
-
-/* Separador */
 .cfg-form hr {
   border: none;
   border-top: 2px solid var(--color1);
@@ -572,14 +568,12 @@ main a:hover {
   padding: 15px;
   text-align: center;
 }
-
 .cfg-footer .link {
   color: var(--color1);
   font-family: var(--font);
   text-decoration: none;
   font-size: 1rem;
 }
-
 .cfg-footer .link:hover {
   text-decoration: underline;
 }
