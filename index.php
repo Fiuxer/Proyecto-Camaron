@@ -34,6 +34,9 @@ switch ($uri) {
   case 'config':
     include 'project/frontend/config/config.html';
     break;
+  case 'credits':
+    include 'project/frontend/credits/credits.html';
+    break;
   default:
     echo '404 🥀';
     break;

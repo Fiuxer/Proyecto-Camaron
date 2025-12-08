@@ -1,0 +1,16 @@
+ul {
+  font-size: 2rem;
+  line-height: 5rem;
+}
+
+ul > li {
+  font-size: 1.5rem;
+  line-height: normal;
+}
+
+aside > p {
+  font-size: 1.8rem;
+  padding-inline: 15px;
+  line-height: 2rem;
+  grid-row: 1;
+}
