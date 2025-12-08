@@ -330,7 +330,7 @@ main a {
   text-decoration: none;
   color: white;
   width: 80%;
-  height: 300px;
+  height: 150px;
   background-color: transparent;
   border-radius: 5px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.4039215686);
@@ -593,9 +593,6 @@ main a:hover {
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   padding-inline: 15px;
-}
-.m-duolingo::before {
-  content: "->";
 }
 .m-duolingo [class^=m-duolingo__answer] {
   background-color: #FFFFFF;

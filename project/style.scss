@@ -355,7 +355,7 @@ main {
     text-decoration: none;
     color: white;
     width: 80%;
-    height: 300px;
+    height: 150px;
     background-color: transparent;
     border-radius: 5px;
     box-shadow: 0 0 3px #00000067;
@@ -636,10 +636,6 @@ main {
 // All that duolingo type shit
 
 .m-duolingo {
-  &::before {
-    content: "->";
-  }
-
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 1fr 2fr 1fr 1fr;
