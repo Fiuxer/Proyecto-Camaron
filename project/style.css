@@ -529,17 +529,17 @@ main a.lecture-link:hover {
   gap: 15px;
   padding-inline: 15px;
 }
-.m-duolingo [class^=m-duolingo__answer] {
+.m-duolingo [class*=__answer] {
   background-color: #FFFFFF;
   color: var(--color1);
-  height: min(5rem, 5vh);
+  height: max(5rem, 5vh);
   width: auto;
   border: var(--color1) 3px solid;
   border-radius: 4px;
   transition: all 0.2s ease-in-out;
   font-size: 0.7rem;
 }
-.m-duolingo [class^=m-duolingo__answer]:hover {
+.m-duolingo [class*=__answer]:hover {
   color: #FFFFFF;
   background-color: var(--color1);
   border-color: #FFFFFF;

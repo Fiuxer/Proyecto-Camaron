@@ -564,12 +564,10 @@ main {
   gap: 15px;
   padding-inline: 15px;
   
-  $cont: str-slice("#{&}", 2);    // Do I explain all ts? Like is it necessary?
-  [class^="#{$cont}__answer"] {   // Cus I mean I understand it very well but it tags all classes with .m-duolingo__answer
-                                  // You can js do [class*="__answer"] {} or [class^=".m-duolingo__answer"] or &[class*="answer"]
-                                  background-color: #FFFFFF;
+  [class*="__answer"] {
+    background-color: #FFFFFF;
     color: var(--color1);
-    height: min(5rem, 5vh);
+    height: max(5rem, 5vh);
     width: auto;
     border: var(--color1) 3px solid;
     border-radius: 4px;
