@@ -3,6 +3,7 @@
 include "db.php";
 
 if (isset($_GET["id"])) {
+  // ID es lo que digo que se puede poner escondido. Si le das click al link sale como https://pagina?id=10
   $id = intval($_GET["id"]);
 
   $query = "SELECT * FROM lecciones WHERE id = $id";

@@ -71,7 +71,7 @@ window.onload = async (e) => {
   }
 
   container.innerHTML = '';
-
+ //! AQUI ES
   lecturesData.forEach(lecture => {
     const a = document.createElement("a");
     a.href = `/Proyecto-Camaron/lecture?id=${lecture.id}`;
